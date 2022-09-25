@@ -1,38 +1,87 @@
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
-using UnityEngine;
 
 public class VisionCone : MonoBehaviour
 {
-    private Color colour;
-    private Renderer renderer;
-    [SerializeField] bool entered;
-    // Start is called before the first frame update
+
+    public float radius = 5f;
+    [Range(1, 360)] public float angle = 45f;
+
+    public LayerMask targetMask;
+    public LayerMask obstacleMask;
+
+    public GameObject playerRef;
+    public bool CanSeePlayer { get; private set; }
+
     void Start()
     {
-        entered = false;
-        renderer = GetComponent<Renderer>();
+        playerRef = GameObject.FindGameObjectWithTag("Player");
+        StartCoroutine(FOVCheck());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator FOVCheck()
     {
-        
-    }
+        WaitForSeconds wait = new WaitForSeconds(0.2f);
 
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
+        while (true)
         {
-            entered = true;
-            renderer.material.color = Color.green;
+            yield return wait;
+            FOV();
         }
-        
-    }
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        renderer.material.color = Color.red;
     }
 
+    private void FOV()
+    {
+        Collider2D[] rangeCheck = Physics2D.OverlapCircleAll(transform.position, radius, targetMask);
+
+        if(rangeCheck.Length > 0)
+        {
+            Transform target = rangeCheck[0].transform;
+            Vector2 directionToTarget = (target.position - transform.position).normalized;
+
+            if (Vector2.Angle(transform.up, directionToTarget) < angle/2)
+            {
+                float distanceToTarget = Vector2.Distance(transform.position, target.position);
+                if (!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, obstacleMask))
+                    CanSeePlayer = true;
+                else
+                    CanSeePlayer = false;
+
+
+            }
+            else
+            {
+                CanSeePlayer=false;
+            }
+        }
+        else if (CanSeePlayer)
+        {
+            CanSeePlayer = false;
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, radius);
+
+        Vector3 angle01 = DirectionFromAngle(-transform.eulerAngles.z, -angle / 2);
+        Vector3 angle02 = DirectionFromAngle(-transform.eulerAngles.z, angle / 2);
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(transform.position, transform.position + angle01 * radius);
+        Gizmos.DrawLine(transform.position, transform.position + angle02 * radius);
+
+        if (CanSeePlayer)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(transform.position, playerRef.transform.position);
+        }
+    }
+    private Vector2 DirectionFromAngle(float eulerY, float angle)
+    {
+        angle += eulerY;
+        return new Vector2(Mathf.Sin(angle * Mathf.Deg2Rad), Mathf.Cos(angle * Mathf.Deg2Rad));
+    }
 }
