@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6984914702906573730}
   - component: {fileID: 6984914702906573729}
   - component: {fileID: 6984914702906573728}
+  - component: {fileID: 8928713287532611016}
   m_Layer: 0
   m_Name: Soldier
   m_TagString: Enemy
@@ -144,7 +145,7 @@ Animator:
   m_GameObject: {fileID: 6984914702906573743}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ab56d41acd1861340aa5e80329c713c3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -154,3 +155,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8928713287532611016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6984914702906573743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81ff92f167b4dc4cac7de273f28638f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastDir: {x: 1, y: 0}
