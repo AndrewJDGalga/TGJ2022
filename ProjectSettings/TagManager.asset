@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Trap
   - Door
+  - Soldier
+  - Dog
   layers:
   - Default
   - TransparentFX
