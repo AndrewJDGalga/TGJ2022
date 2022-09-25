@@ -8,6 +8,11 @@ public class ColorAffected : MonoBehaviour
     private SpriteRenderer sRender;
     private Color32 ownColor;
     private Color32 globalColor;
+    public bool Invisible
+    {
+        set;get;
+    }
+
 
     private void Awake()
     {
@@ -31,10 +36,12 @@ public class ColorAffected : MonoBehaviour
         if (ownColor.r == globalColor.r)
         {
             sRender.enabled = true;
+            Invisible = false;
         }
         else
         {
             sRender.enabled = false;
+            Invisible = true;
         }
     }
 }
