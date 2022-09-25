@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DogAnimationSwitcher : MonoBehaviour
+public class DogAnimationInterface : MonoBehaviour
 {
     [SerializeField] Vector2 lastDir = Vector2.right;
     private Animator anim;
