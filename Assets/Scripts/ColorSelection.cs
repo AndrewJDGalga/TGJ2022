@@ -22,7 +22,7 @@ public class ColorSelection : MonoBehaviour
     {
         Color32 selectedColor = yellow;
 
-        if(selectColor < 5 && selectColor > 0) {
+        if(selectColor < 4 && selectColor >= 0) {
             switch (selectColor)
             {
                 case 0:
