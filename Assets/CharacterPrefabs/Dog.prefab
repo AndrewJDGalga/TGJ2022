@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9014677334902822428}
   - component: {fileID: 9014677334902822429}
   - component: {fileID: 9014677334902822498}
+  - component: {fileID: 407341305029349673}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Enemy
@@ -154,3 +155,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &407341305029349673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9014677334902822499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 749747a78adaba0489dfb14a0adadbe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastDir: {x: 1, y: 0}
