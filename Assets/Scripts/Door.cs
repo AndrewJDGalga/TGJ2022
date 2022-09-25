@@ -8,7 +8,7 @@ public class Door : MonoBehaviour
     BoxCollider2D boxCol;
     [SerializeField] ColorAffected cAffected;
 
-    private void Ready()
+    private void Start()
     {
         //sRender = GetComponent<SpriteRenderer>();
         boxCol = GetComponent<BoxCollider2D>();

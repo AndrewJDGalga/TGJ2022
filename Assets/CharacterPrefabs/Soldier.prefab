@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8928713287532611016}
   - component: {fileID: 1935255635}
   - component: {fileID: 1935255642}
+  - component: {fileID: -8858090801420855592}
   m_Layer: 0
   m_Name: Soldier
   m_TagString: Enemy
@@ -182,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5cd6783b32b324ca1d5bd60e247de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectColor: 1
+  selectColor: 2
 --- !u!114 &1935255642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,3 +196,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d3b3813dc433544ead2732d1de126de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8858090801420855592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6984914702906573743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a52b3d2fb0900f24b97680f7da4ea1a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 5
+  angle: 45
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  playerRef: {fileID: 0}
