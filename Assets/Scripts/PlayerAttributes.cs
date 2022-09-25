@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -23,11 +24,20 @@ public class PlayerAttributes : MonoBehaviour
         if (collision.gameObject.CompareTag("Soldier"))
         {
             health -= 1;
+            Debug.Log("Hit by Soldier");
         }
         if (collision.gameObject.CompareTag("Dog"))
         {
             health -= 3;
+            Debug.Log("Hit by Dog");
         }
+        if (collision.gameObject.CompareTag("Trap"))
+        {
+            health -= 2;
+            Destroy(collision.gameObject);
+            Debug.Log("hurt by mine");
+        }
+
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
