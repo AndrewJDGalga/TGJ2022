@@ -6,11 +6,14 @@ public class playerMovement : MonoBehaviour
 {
     private bool up, down, left, right;
 
-    [SerializeField] float moveSpeed = 5f;
+    [SerializeField] 
+    float moveSpeed = 5f;
+    [SerializeField]
+    private float rotationSpeed;
 
     private Rigidbody2D rb;
-
     Vector2 movement;
+
 
     private void Start()
     {
@@ -54,5 +57,15 @@ public class playerMovement : MonoBehaviour
             xChange += moveSpeed;
 
         rb.velocity = new Vector2(xChange, yChange);
+
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+        Vector2 moveDirec = new Vector2(horizontalInput, verticalInput);
+        moveDirec.Normalize();
+        if(moveDirec != Vector2.zero)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, moveDirec);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+        }
     }
 }

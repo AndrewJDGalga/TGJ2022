@@ -25,7 +25,7 @@ public class playerCombat : MonoBehaviour
         //damage enemies
         foreach(Collider2D enemy in hitEnemies)
         {
-            Debug.Log("We hit "+ enemy.name);
+            Debug.Log(this.name + " We hit "+ enemy.name);
         }
     }
 
