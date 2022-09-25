@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 9014677334902822429}
   - component: {fileID: 9014677334902822498}
   - component: {fileID: 407341305029349673}
+  - component: {fileID: 1435304285}
+  - component: {fileID: 1435304286}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Enemy
@@ -168,3 +170,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastDir: {x: 1, y: 0}
+--- !u!114 &1435304285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9014677334902822499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5cd6783b32b324ca1d5bd60e247de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectColor: 0
+--- !u!114 &1435304286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9014677334902822499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3b3813dc433544ead2732d1de126de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

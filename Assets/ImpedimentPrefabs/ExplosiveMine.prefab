@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5708150803090355653}
   - component: {fileID: 5708150803090355652}
   - component: {fileID: 5708150803090355707}
+  - component: {fileID: 2033220969}
+  - component: {fileID: 2033220970}
   m_Layer: 0
   m_Name: ExplosiveMine
   m_TagString: Trap
@@ -122,3 +124,28 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0050724437, y: -0.26376906}
   m_Size: {x: 0.61111027, y: 0.38792205}
   m_Direction: 1
+--- !u!114 &2033220969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5708150803090355705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5cd6783b32b324ca1d5bd60e247de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectColor: 2
+--- !u!114 &2033220970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5708150803090355705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3b3813dc433544ead2732d1de126de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

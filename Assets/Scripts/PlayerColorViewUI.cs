@@ -36,5 +36,10 @@ public class PlayerColorViewUI : MonoBehaviour
         {
             ob.GetComponent<ColorAffected>().SetSelectedColor(curColor);
         }
+
+        foreach(GameObject obj in GameObject.FindGameObjectsWithTag("Trap"))
+        {
+            obj.GetComponent<ColorAffected>().SetSelectedColor(curColor);
+        }
     }
 }
