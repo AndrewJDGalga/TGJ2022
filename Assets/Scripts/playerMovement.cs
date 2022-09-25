@@ -4,23 +4,55 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    private bool up, down, left, right;
 
-    public Rigidbody2D rb;
+    [SerializeField] float moveSpeed = 5f;
+
+    private Rigidbody2D rb;
 
     Vector2 movement;
 
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     // Update is called once per frame
     void Update()
     {
         // Input
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        if (Input.GetKeyDown(KeyCode.W))
+            up = true;
+        if (Input.GetKeyDown(KeyCode.S))
+            down = true;
+        if (Input.GetKeyDown(KeyCode.A))
+            left = true;
+        if (Input.GetKeyDown(KeyCode.D))
+            right = true;
+
+        if (Input.GetKeyUp(KeyCode.W))
+            up = false;
+        if (Input.GetKeyUp(KeyCode.S))
+            down = false;
+        if (Input.GetKeyUp(KeyCode.A))
+            left = false;
+        if (Input.GetKeyUp(KeyCode.D))
+            right = false;
     }
 
-    void FixedUpdate() 
+    void FixedUpdate()
     {
         // Movement
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        float xChange = 0f;
+        float yChange = 0f;
+        if (up)
+            yChange += moveSpeed;
+        if (down)
+            yChange -= moveSpeed;
+        if (left)
+            xChange -= moveSpeed;
+        if (right)
+            xChange += moveSpeed;
+
+        rb.velocity = new Vector2(xChange, yChange);
     }
 }
