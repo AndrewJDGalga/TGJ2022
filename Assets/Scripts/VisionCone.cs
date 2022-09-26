@@ -43,12 +43,11 @@ public class VisionCone : MonoBehaviour
             if (Vector2.Angle(transform.up, directionToTarget) < angle/2)
             {
                 float distanceToTarget = Vector2.Distance(transform.position, target.position);
+
                 if (!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, obstacleMask))
                     CanSeePlayer = true;
                 else
                     CanSeePlayer = false;
-
-
             }
             else
             {
@@ -61,6 +60,7 @@ public class VisionCone : MonoBehaviour
         }
     }
 
+    /*
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
@@ -78,7 +78,9 @@ public class VisionCone : MonoBehaviour
             Gizmos.color = Color.green;
             Gizmos.DrawLine(transform.position, playerRef.transform.position);
         }
-    }
+    } */
+
+
     private Vector2 DirectionFromAngle(float eulerY, float angle)
     {
         angle += eulerY;

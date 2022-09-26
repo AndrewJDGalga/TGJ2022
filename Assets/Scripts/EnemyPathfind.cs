@@ -24,7 +24,7 @@ public class EnemyPathfind : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(vCone.CanSeePlayer);
+        //Debug.Log(vCone.CanSeePlayer);
         if(vCone.CanSeePlayer == true)
         {
             Vector3 direction = (target.position - transform.position).normalized;
