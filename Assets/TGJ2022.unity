@@ -662,6 +662,8 @@ GameObject:
   - component: {fileID: 2131233523}
   - component: {fileID: 2131233525}
   - component: {fileID: 2131233526}
+  - component: {fileID: 2131233528}
+  - component: {fileID: 2131233527}
   m_Layer: 10
   m_Name: Bot
   m_TagString: Soldier
@@ -775,7 +777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 5
-  angle: 45
+  angle: 93
   targetMask:
     serializedVersion: 2
     m_Bits: 2048
@@ -783,3 +785,37 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   playerRef: {fileID: 1223050463}
+--- !u!50 &2131233527
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131233522}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &2131233528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131233522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59674e40671def84094094842ceae732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3

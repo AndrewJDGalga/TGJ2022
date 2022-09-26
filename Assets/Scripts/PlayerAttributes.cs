@@ -24,18 +24,18 @@ public class PlayerAttributes : MonoBehaviour
         if (collision.gameObject.CompareTag("Soldier"))
         {
             health -= 1;
-            Debug.Log("Hit by Soldier");
+            Debug.Log("Hit by Soldier, current health at: " + health);
         }
         if (collision.gameObject.CompareTag("Dog"))
         {
             health -= 3;
-            Debug.Log("Hit by Dog");
+            Debug.Log("Hit by Dog, current health at: " + health);
         }
         if (collision.gameObject.CompareTag("Trap"))
         {
             health -= 2;
             Destroy(collision.gameObject);
-            Debug.Log("hurt by mine");
+            Debug.Log("hurt by mine, current health at: " + health);
         }
 
     }
